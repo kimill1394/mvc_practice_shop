@@ -27,9 +27,5 @@
       return $rec;
     }
 
-    public function getCount($sql, $parameter=array()) {
-      $count = $this->execute($sql, $parameter)->rowCount();
-      return $count;
-    }
   }
  ?>

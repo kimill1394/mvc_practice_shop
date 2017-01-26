@@ -50,25 +50,25 @@ CREATE TABLE `item` (
   -- FOREIGN KEY (`itemstatus`) REFERENCES `itemstatus` (`itemstatus`)
 );
 
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500, './img/1.png', 3);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('먹색 플레인램', 1, 2500, './img/2.png', 1);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500, '/img/1.png', 1);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('먹색 플레인램', 1, 2500, '/img/2.png', 1);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('빨간 플레인램', 1, 4000, '/img/5.png', 1);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('파스텔 플레인램', 1, 4500, '/img/11.png', 1);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('허니 멜론 플레인램', 1, 5000, '/img/13.png', 2);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('감 슈', 2, 7200, '/img/221.png', 3);
+insert into item(itemname, category, itemprice, itemimg, itemstar) values('젤리빈 슈', 2, 13000, '/img/229.png', 4);
 insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
 insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
 insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
-insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
+-- insert into item(itemname, category, itemprice, itemimg, itemstar) values('흰색 플레인램', 1, 2500);
 
 
 CREATE TABLE `usertype` (
@@ -80,6 +80,8 @@ CREATE TABLE `usertype` (
 
 
 -- insert into
+insert into usertype values(1, 'admin', 0.9);
+insert into usertype values(2, 'nomal', 0.1);
 
 
 
@@ -99,6 +101,7 @@ CREATE TABLE `user` (
   -- FOREIGN KEY (`usertype`) REFERENCES `usertype` (`usertype`) -- cant create table
 
 );
+
 
 
 CREATE TABLE `mysheep` (
@@ -127,7 +130,7 @@ CREATE TABLE `free` (
 CREATE TABLE `shoppinglist` (
   `shoppingno` int(11) NOT NULL AUTO_INCREMENT,
   `shopperid` varchar(255) DEFAULT NULL,
-  `shoppeditemname` int(11) DEFAULT NULL,
+  `shoppeditemname` varchar(255) DEFAULT NULL,
   `shoppeddate` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`shoppingno`),
   KEY `shopperid` (`shopperid`),
@@ -142,4 +145,10 @@ CREATE TABLE `file` (
   `filepath` varchar(255) DEFAULT NULL,
   `filedate` varchar(255) DEFAULT NULL,
   PRIMARY KEY `freeno` (`freeno`)
+);
+
+
+CREATE TABLE `img` (
+  `name` varchar(255) not NULL,
+  `img` varchar(255) not null
 );

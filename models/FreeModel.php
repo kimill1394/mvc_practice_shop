@@ -23,8 +23,8 @@
     }
 
     public function getNextNum() {
-      $sql = "SELECT * FROM free";
-      return $this->getCount($sql, array(":no" => $no));
+      $sql = "SELECT * FROM free ORDER BY freeno DESC";
+      return $this->getRecord($sql)['freeno'];
     }
 
   }

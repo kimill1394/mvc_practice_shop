@@ -1,6 +1,6 @@
 <div class="middle">
   <div class="category">
-    <div><?=$num?>카테고리</div>
+    <div>카테고리</div>
   </div>
   <div class="sheeplist">
     <?php foreach($items as $item): ?>
@@ -21,11 +21,13 @@
   </div>
   <div class="page">
     <ul>
-      <li><a href="">처음으로</a></li>
-      <li><a href="">이전</a></li>
-      <li><a href="">1</a></li>
-      <li><a href="">다음</a></li>
-      <li><a href="">끝으로</a></li>
+      <?php for($i=1; $i<=$pagecount; <$i++): ?>
+        <li><a href="<?= $base_url ?>/list/1">처음으로</a></li>
+        <li><a href="<?= $base_url ?>/list/<?= $i-1 ?>">이전</a></li>
+        <li><a href="<?= $base_url ?>/list/<?= $i ?>">1</a></li>
+        <li><a href="<?= $base_url ?>/list/<?= $i+1 ?>">다음</a></li>
+        <li><a href="<?= $base_url ?>/list/<?= $pagecount ?>">끝으로</a></li>
+      <?php endfor; ?>
     </ul>
   </div>
 </div>

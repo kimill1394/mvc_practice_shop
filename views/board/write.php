@@ -22,9 +22,10 @@
     어떤 게시판
   </div>
     <form action='<?=$base_url?>/board/upload/<?=$board['freeno']?>' method='post' enctype='multipart/form-data'>
-    <input type='text' name='title' value='<?=$board['freetitle']?>'>
-    <textarea name='content' id='' cols='30' rows='10'><?=$board['freecontent']?></textarea>
-    <input type='file' multiple name='upfile[]'></input>
-    <input type='submit' value='write'>
-  </form>
-</div>
+      <input type="hidden" name="_token" value="<?=$this->escape($_token)?>">
+      <input type='text' name='title' value='<?=$board['freetitle']?>'>
+      <textarea name='content' id='' cols='30' rows='10'><?=$board['freecontent']?></textarea>
+      <input type='file' multiple name='upfile[]'></input>
+      <input type='submit' value='write'>
+    </form>
+  </div>

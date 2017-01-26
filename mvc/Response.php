@@ -22,10 +22,8 @@
 
     public function send() {
       header(self::HTTP.$this->_statusCode.''.$this->_statusMsg);
-
       foreach($this->_headers as $name=>$value)
         header($name.':'.$value);
-
       print $this->_content;
     }
   }

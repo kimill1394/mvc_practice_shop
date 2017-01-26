@@ -12,7 +12,7 @@
         <div class="option">
           <table>
             <tr>
-              <td class="label">판매가격</td>
+              <td class="label">원가</td>
               <td><?= $details['itemprice'] ?></td>
             </tr>
             <tr>
@@ -31,21 +31,23 @@
               <td class="label">이름</td>
               <td><input type="text" name="name" value="양 이름을 입력해 주세요"></td>
             </tr>
+            <tr>
+              <td><b>판매가</b></td>
+              <td><?= $details['itemprice']*(1-$details['itemsalerate']) ?></td>
+            </tr>
           </table>
-          <div class="totalprice">total: [여기 총 금액이 있음]</div>
         </div>
       </div>
     </div>
     <div class="ordermenu">
       <div class="divbtn buyitnow">
-        <input type="image" src="../../img/btn_buy.jpg" name="selectmode" value="buy" onclick="check_name()">
+        <input type="image" src="/img/etc/buy2.png" name="selectmode" value="buy" onclick="check_name()">
       </div>
-      <div class="divbtn addcart">장바구니</div>
-      <div class="divbtn wishlist">언젠간 사고 말겠음양!</div>
+      <div class="divbtn addcart"><img src="/img/etc/cart.png" alt=""></div>
+      <div class="divbtn wishlist"><img src="/img/etc/loveit.png" alt=""></div>
     </div>
   </form>
   <div class="review">
-    <div class="notice">[여기에 리뷰 관련 알림이 있음]</div>
     <div class="reviewcontents">
       <div class="minicategory"><b>REVIEW<b> | 실구입자의 사실적인 리뷰만 올라오도록 관리하고 있음양ㅎ.ㅎ</div>
       <div class="reviewlist">[여기 리뷰 게시물 리스트가 있음]</div>
@@ -61,6 +63,7 @@
     </div>
   </div>
   <div class="qna">
+    <div class="minicategory"><b>QNA<b> | 궁금한 건 뭐든 물어보셈양ㅎ.ㅎ</div>
     <div class="qnalist">[여기 qna 게시물 리스트가 있음]</div>
     <div class="page">
       <ul>

@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
     <script type="text/javascript">
       function gohome() {
-        window.location.replace("");
+        window.location.replace("/");
       }
     </script>
   </head>
   <body>
     <div class="header">
-      <div class="eventlogo">[여기 이런 이벤트가 있다고 표시함]</div>
+      <!-- <div class="eventlogo">[여기 이런 이벤트가 있다고 표시함]</div> -->
       <div class="membermenu">
         <ul>
           <li><?php
@@ -28,11 +28,15 @@
                   echo "<a href='$base_url/member/join'>회원가입</a>";
              ?></li>
           <li><a href="<?= $base_url ?>/mypage">마이페이지</a></li>
+          <?php
+            if ($session->get('user')['usertype'] == 'admin')
+            echo "<li><a href='$base_url/add'>상품추가</a></li>"
+          ?>
           <li><a href="">Q&amp;A</a></li>
           <li><a href=""><img src="" alt="">[여기 검색 아이콘이 있음]</a></li>
         </ul>
       </div>
-      <div class="logo" onclick="gohome()">[여기 페이지 로고 이미지가 있음 -> 클릭 시 홈으로 이동합니다!]</div>
+      <div class="logo" onclick="gohome()"><img src="/img/etc/banner3.png" alt=""></div>
       <div class="menubar">
         <ul>
           <li><a href="<?= $base_url ?>/list/8">NEW10%</a></li>

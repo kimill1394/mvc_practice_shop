@@ -18,6 +18,11 @@
       else return $param;
     }
 
+    public function getFiles($name, $param=null) {
+      if(isset($_FILES[$name])) return $_FILES[$name];
+      else return $param;
+    }
+
     /* 호스트 이름 획득 */
     public function getHostName() {
       if(!empty($_SERVER['HTTP_HOST'])) return $_SERVER['HTTP_HOST'];

@@ -6,10 +6,12 @@
       $this->execute($sql, array(":no"=>$listno, ":id"=>$userid, ":itemname"=>$itemname, ":shoppeddate"=>$time));
     }
 
-    public function getListCount() {
-      $sql = "SELECT * FROM shoppinglist";
-      $count = $this->getCount($sql);
-      return $count;
+    public function getListNext() {
+      $sql = "SELECT * FROM shoppinglist ORDER BY shoppingno DESC";
+      $result = $this->getRecord($sql)['shoppingno'];
+      if(!$result) return 1;
+      return $result+1;
+
     }
 
 
